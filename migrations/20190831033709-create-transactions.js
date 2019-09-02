@@ -9,36 +9,28 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       tableNumber: {
-        allowNull: false,
         type: Sequelize.INTEGER
       },
       finishedTime: {
-        allowNull: false,
         type: Sequelize.TIME
       },
       subtotal: {
-        allowNull: false,
         type: Sequelize.DOUBLE
       },
       discount: {
-        allowNull: false,
         type: Sequelize.DOUBLE
       },
       serviceCharge: {
-        allowNull: false,
         type: Sequelize.DOUBLE
       },
       tax: {
-        allowNull: false,
         type: Sequelize.DOUBLE
       },
       total: {
-        allowNull: false,
         type: Sequelize.DOUBLE
       },
       isPaid: {
-        allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,

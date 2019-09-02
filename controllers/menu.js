@@ -1,8 +1,14 @@
 const models = require('../models/'),
     menu = models.menus
 
-
 exports.index = (req, res) => {
+    categoryId = req.params.id
+    menu.findAll({ where: { categoryId } })
+        .then(menu => res.status(200).send(menu))
+        .catch(err => res.status(400).send(err))
+}
+
+exports.indexAll = (req, res) => {
     menu.findAll()
         .then(menu => res.status(200).send(menu))
         .catch(err => res.status(400).send(err))

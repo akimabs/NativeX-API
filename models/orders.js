@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     price: DataTypes.DOUBLE,
     status: DataTypes.INTEGER
   }, {});
-  orders.associate = function(models) {
+  orders.associate = function (models) {
     // associations can be defined here
   };
   return orders;

@@ -16,12 +16,13 @@ const orderController = require('./controllers/orders')
 app.use(bodyParser.json())
 app.use('/', express.static(path.join(__dirname, 'public')))
 
-app.get('/', (req, res) => res.send('Wellcome to NativeX-API'))
+app.get('/api/v1', (req, res) => res.send('Wellcome to NativeX-API'))
 
 app.group('/api/v1', (router) => {
     // Auth Routes
     router.post('/menu', menuController.store)
-    router.get('/menus', menuController.index)
+    router.get('/menus', menuController.indexAll)
+    router.get('/menus/:id', menuController.index)
     router.get('/menu/:id', menuController.show)
     // router.patch('/menu/:id')
     router.delete('/menu/:id', menuController.delete)
@@ -37,7 +38,7 @@ app.group('/api/v1', (router) => {
     router.post('/transaction', transactionController.store)
     router.get('/transactions', transactionController.index)
     router.get('/transaction/:id', transactionController.show)
-    // router.patch('/menu/:id')
+    router.patch('/menu/:id', transactionController.patch)
     router.delete('/transaction/:id', transactionController.delete)
 
     // Transactions Routes
@@ -50,4 +51,4 @@ app.group('/api/v1', (router) => {
 
 
 
-app.listen(process.env.PORT, () => console.log(`listening on port ${process.env.PORT}!`))
+app.listen(PORT, () => console.log(`listening on port ${PORT}!`))

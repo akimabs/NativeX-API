@@ -39,6 +39,18 @@ exports.store = (req, res) => {
         .catch(err => res.status(400).send(err))
 }
 
+exports.patch = (req, res) => {
+    transaction.update(
+        req.body, {
+            where: { id: req.params.id }
+        }
+    ).then(data => {
+        res.send({
+            message: "Berhasil"
+        })
+    })
+}
+
 exports.delete = (req, res) => {
     const id = req.params.id
 
