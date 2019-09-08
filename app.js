@@ -6,6 +6,7 @@ const express = require('express'),
     path = require('path'),
     PORT = process.env.PORT || 3000
 
+console.log(process.env.DATABASE_URL);
 
 const menuController = require('./controllers/menu')
 const categoriesController = require('./controllers/categories')
