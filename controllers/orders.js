@@ -3,6 +3,13 @@ const models = require('../models/'),
 
 
 exports.index = (req, res) => {
+    transactionId = req.params.id
+    order.findAll({ where: { transactionId } })
+        .then(menu => res.status(200).send(menu))
+        .catch(err => res.status(400).send(err))
+}
+
+exports.indexAll = (req, res) => {
     order.findAll()
         .then(order => res.status(200).send(order))
         .catch(err => res.status(400).send(err))
@@ -25,7 +32,7 @@ exports.show = (req, res) => {
 exports.store = (req, res) => {
     const data = req.body
     console.log(data)
-    order.create(data)
+    order.bulkCreate(data)
         .then(order => res.status(201).send(order))
         .catch(err => res.status(400).send(err))
 }

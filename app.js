@@ -43,7 +43,8 @@ app.group('/api/v1', (router) => {
 
     // Transactions Routes
     router.post('/order', orderController.store)
-    router.get('/orders', orderController.index)
+    router.get('/order/:id', orderController.index)
+    router.get('/orders', orderController.indexAll)
     router.get('/order/:id', orderController.show)
     // router.patch('/menu/:id')
     router.delete('/order/:id', orderController.delete)
