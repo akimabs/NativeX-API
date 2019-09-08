@@ -4,7 +4,7 @@ const express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
     path = require('path'),
-    PORT = 3000
+    PORT = process.env.PORT || 3000
 
 
 const menuController = require('./controllers/menu')
