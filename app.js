@@ -46,7 +46,7 @@ app.group('/api/v1', (router) => {
     router.post('/order', orderController.store)
     router.get('/order/:id', orderController.index)
     router.get('/orders', orderController.indexAll)
-    router.get('/order/:id', orderController.show)
+    router.get('/orders/:id', orderController.show)
     // router.patch('/menu/:id')
     router.delete('/order/:id', orderController.delete)
 })
