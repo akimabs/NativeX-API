@@ -36,7 +36,7 @@ exports.store = (req, res) => {
     const data = req.body
     console.log(data)
     transaction.create(data)
-        .then(transaction => res.status(201).send(transaction, { message: 'Add Transactions' }))
+        .then(transaction => res.status(201).send(transaction))
         .catch(err => res.status(400).send(err))
 }
 
