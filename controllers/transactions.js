@@ -51,8 +51,10 @@ exports.patch = (req, res) => {
             } else {
                 return res.status(404).send({ message: 'transaction not found' })
             }
-        }
+        })
+        .catch(err => res.status(400).send(err))
 }
+
 
 exports.delete = (req, res) => {
     const id = req.params.id
