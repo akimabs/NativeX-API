@@ -41,7 +41,7 @@ exports.store = (req, res) => {
 }
 
 exports.patch = (req, res) => {
-    transaction.update(
+    Transaction.update(
         req.body, {
             where: { id: req.params.id }
         }
