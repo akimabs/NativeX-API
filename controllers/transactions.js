@@ -45,10 +45,10 @@ exports.patch = (req, res) => {
         req.body, {
             where: { id: req.params.id }
         }
-    ).then(data => {
+    ).then(transaction => {
        res.send({
        message: "transaction update",
-       data
+       transaction
        })
     })
   }           
