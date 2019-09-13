@@ -50,7 +50,7 @@ exports.patch = (req, res) => {
        message: "transaction update",
        transactions
        })
-    }
+    })
   }           
 
 exports.delete = (req, res) => {
