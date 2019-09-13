@@ -47,7 +47,8 @@ exports.patch = (req, res) => {
         }
     ).then(data => {
         res.send({
-            message: "Berhasil"
+            message: "Berhasil",
+            data
         })
     })
 }
