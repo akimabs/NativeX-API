@@ -50,6 +50,7 @@ exports.patch = (req, res) => {
        message: "transaction update",
            transaction
        })
+    }
   }
 
 
