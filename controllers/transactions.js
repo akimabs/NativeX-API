@@ -1,11 +1,11 @@
 const models = require('../models/'),
-    transaction = models.transactions,
+    Transaction = models.transactions,
     order = models.orders
 
 
 
 exports.index = (req, res) => {
-    transaction.findAll({
+    Transaction.findAll({
         include: [{
             model: order
         }]
@@ -17,7 +17,7 @@ exports.index = (req, res) => {
 exports.show = (req, res) => {
     const id = req.params.id
 
-    transaction.findOne({
+    Transaction.findOne({
         where: { id }, include: [{
             model: order
         }]
@@ -35,7 +35,7 @@ exports.show = (req, res) => {
 exports.store = (req, res) => {
     const data = req.body
     console.log(data)
-    transaction.create(data)
+    Transaction.create(data)
         .then(transaction => res.status(201).send(transaction))
         .catch(err => res.status(400).send(err))
 }
@@ -56,7 +56,7 @@ exports.patch = (req, res) => {
 exports.delete = (req, res) => {
     const id = req.params.id
 
-    transaction.destroy({ where: { id } })
+    Transaction.destroy({ where: { id } })
         .then(transaction => {
             if (transaction) {
                 return res.status(204).send({ message: 'transaction deleted' })
