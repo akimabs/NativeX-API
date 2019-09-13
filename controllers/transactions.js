@@ -46,10 +46,7 @@ exports.patch = (req, res) => {
             where: { id: req.params.id }
         }
     ).then(data => {
-        res.send({
-            message: "Berhasil",
-            data: data
-        })
+        res.send(data)
     })
 }
 
