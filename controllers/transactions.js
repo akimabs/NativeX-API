@@ -46,14 +46,11 @@ exports.patch = (req, res) => {
             where: { id: req.params.id }
         }
     ).then(transaction => {
-            if (transaction) {
-                return res.status(204).send({ message: 'transaction updated' })
-            } else {
-                return res.status(404).send({ message: 'transaction not found' })
-            }
-        })
-        .catch(err => res.status(400).send(err))
-}
+       res.send({
+       message: "transaction update",
+           transaction
+       })
+  }
 
 
 exports.delete = (req, res) => {
