@@ -45,14 +45,13 @@ exports.patch = (req, res) => {
         req.body, {
             where: { id: req.params.id }
         }
-    ).then(transaction => {
+    ).then(transactions => {
        res.send({
        message: "transaction update",
-           transaction
+       transactions
        })
     }
-  }
-
+  }           
 
 exports.delete = (req, res) => {
     const id = req.params.id
